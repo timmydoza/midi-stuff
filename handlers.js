@@ -1,3 +1,11 @@
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var map2 = Array(12).join(' ').split('').map(function() {
+  return randInt(-24, 24);
+})
+
 var noteHandlers = {
 
   'Upside Down': function(pitch) {
@@ -13,7 +21,7 @@ var noteHandlers = {
   'Map': function(pitch) {
 
     var map = [
-      0, // c
+      , // c
       1, // c#
       0, // d
       1, // d#
@@ -27,7 +35,7 @@ var noteHandlers = {
       0 // b
     ];
 
-    return map[pitch % 12] + pitch;
+    return map2[pitch % 12] + pitch;
   }
 
 };

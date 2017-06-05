@@ -1,0 +1,31 @@
+@import '_normalize.css';
+
+.keyboard {
+  position: relative;
+  width: 100%;
+}
+
+.key {
+  position: absolute;
+  height: 160px;
+  width: percentage(1/52);
+  border: 1px solid black;
+
+  &.key--active {
+    background: #f00;
+  }
+}
+
+.key--black {
+  height: 100px;
+  background: black;
+  width: percentage(1/104);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+@for $i from 0 through 52 {
+  .whiteindex-#{$i} {
+    left: percentage($i / 52);
+  }
+}
