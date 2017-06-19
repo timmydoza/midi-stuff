@@ -10,7 +10,7 @@
     "dev": "concurrently --kill-others \"npm run sass-watch\" \"npm run js-watch\" \"npm run server\"",
     "server": "reload -b -d build",
     "build-css": "mkdir -p build/css && node-sass scss/app.scss build/css/app.css",
-    "copy": "mkdir -p build/js && cat vendor/angular.min.js js/*.js > build/js/app.js",
+    "copy": "mkdir -p build/js && cat vendor/angular.min.js js/*.js > build/js/app.js && cp index.html build",
     "build": "npm run copy && npm run build-css"
   },
   "keywords": [],
