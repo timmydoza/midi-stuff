@@ -39,7 +39,6 @@ app.controller('midiCtrl', function($scope) {
   };
 
   $scope.keys = keyboard();
-  $scope.activeNotes = {};
 
   var initTime;
   var recording = [];
@@ -69,7 +68,11 @@ app.controller('midiCtrl', function($scope) {
     var input = $scope.inputs[$scope.inputSelect][1];
     var output = $scope.outputs[$scope.outputSelect][1];
 
+    var keyboard = window.keyboard = new Keyboard(output);
+
     input.onmidimessage = function(event) {
+
+      var key = event.data[1];
 
       var note = Object.keys($scope.activeNoteHandlers).reduce(function(prev, curr) {
 
@@ -83,16 +86,15 @@ app.controller('midiCtrl', function($scope) {
           return prev;
         }
 
-      }, event.data[1]);
+      }, key);
 
-      $scope.activeNotes[note] = event.data[0] === 144;
 
       var payload = [event.data[0], note, event.data[2]];
 
-      if (event.data[0] === 176) {
-        output.send(event.data, event.timestamp);
+      if (event.data[0] === 128) {
+        keyboard[key].stop(event.data, event.timestamp);
       } else {
-        output.send(payload, event.timeStamp);
+        keyboard[key].play(payload, event.timeStamp);
       }
 
 

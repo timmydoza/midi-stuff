@@ -4,14 +4,26 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "onchange scss/app.scss -- node-sass scss/app.scss build/css/app.css",
+    "js-watch": "onchange js/*.js -- npm run copy",
+    "dev": "concurrently --kill-others \"npm run sass-watch\" \"npm run js-watch\" \"npm run server\"",
+    "server": "reload -b -d build",
+    "build-css": "mkdir -p build/css && node-sass scss/app.scss build/css/app.css",
+    "copy": "mkdir -p build/js && cat vendor/angular.min.js js/*.js > build/js/app.js",
+    "build": "npm run copy && npm run build-css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "file:angular",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
     "node-sass": "^4.5.3",
-    "normalize.css": "^7.0.0"
+    "onchange": "^3.2.1",
+    "reload": "^1.1.5",
+    "uglify": "^0.1.5"
   }
 }
