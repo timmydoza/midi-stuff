@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-watch": "onchange scss/app.scss -- node-sass scss/app.scss build/css/app.css",
-    "js-watch": "onchange js/*.js -- npm run copy",
-    "dev": "concurrently --kill-others \"npm run sass-watch\" \"npm run js-watch\" \"npm run server\"",
+    "js-watch": "onchange js/*.js index.html -- npm run copy",
+    "dev": "npm run build && concurrently --kill-others \"npm run sass-watch\" \"npm run js-watch\" \"npm run server\"",
     "server": "reload -b -d build",
     "build-css": "mkdir -p build/css && node-sass scss/app.scss build/css/app.css",
     "copy": "mkdir -p build/js && cat vendor/angular.min.js js/*.js > build/js/app.js && cp index.html build",
@@ -17,6 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.5",
+    "angular-route": "^1.6.5",
     "jquery": "^3.2.1"
   },
   "devDependencies": {

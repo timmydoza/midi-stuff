@@ -6,7 +6,6 @@
     <title>Midi</title>
   </head>
   <body ng-app="midiApp" ng-controller="midiCtrl">
-
     Inputs:
     <select ng-model="inputSelect">
       <option ng-repeat="input in inputs" value="{{$index}}">{{input[1].name}}</option>
@@ -30,6 +29,7 @@
 
     <div class="keyboard">
       <div ng-repeat="key in keys"
+           id="key-{{key.key}}"
            class="key-{{key.key}}
                   note-{{key.note}}
                   index-{{$index}}
