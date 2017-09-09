@@ -30,6 +30,7 @@
 
     <div class="keyboard">
       <div ng-repeat="key in keys"
+           id="key-{{key.key}}"
            class="key-{{key.key}}
                   note-{{key.note}}
                   index-{{$index}}
