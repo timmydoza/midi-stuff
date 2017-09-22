@@ -1,2 +1,2 @@
 'use strict';
-var app = angular.module('midiApp', ['ngRoute']);
+var app = angular.module('midiApp', []);
