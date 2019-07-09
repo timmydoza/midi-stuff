@@ -1,6 +1,6 @@
 # midi
 
-Use chrome to connect this to a MIDI keyboard and do crazy things, like play an upside-down piano.
+Uses the [web MIDI api](https://www.w3.org/TR/webmidi/) (supported by Chrome) to connect to a MIDI keyboard and do crazy things, like play an upside-down piano.
 
 Clone the repo, then:
 
