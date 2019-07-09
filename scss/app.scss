@@ -1,8 +1,13 @@
 @import 'normalize';
 
+body {
+  margin: 10px;
+}
+
 .keyboard {
   position: relative;
-  width: 100%;
+  width: calc(100% - 10px);
+  margin: 10px auto;
 }
 
 .key {
@@ -10,6 +15,7 @@
   height: 160px;
   width: percentage(1/52);
   border: 1px solid black;
+  box-sizing: border-box;
 
   &.key--active {
     background: #f00;
@@ -19,9 +25,20 @@
 .key--black {
   height: 100px;
   background: black;
-  width: percentage(1/104);
-  transform: translateX(-50%);
+  width: percentage(1/90);
   z-index: 1;
+  
+  &:nth-child(12n - 7), &:nth-child(12n - 2) {
+    transform: translateX(-60%);
+  }
+
+  &:nth-child(12n - 5), &:nth-child(12n + 2) {
+    transform: translateX(-40%);
+  }
+
+  &:nth-child(12n) {
+    transform: translateX(-50%);
+  }
 }
 
 @for $i from 0 through 52 {
