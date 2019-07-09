@@ -29,7 +29,7 @@ var crazy = Array(12).join(' ').split('').map(function() {
 
 var gMajor = [
   0, // c
-  -1, // c#
+  0, // c#
   0, // d
   1, // d#
   0, // e
