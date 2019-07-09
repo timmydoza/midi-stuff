@@ -8,4 +8,4 @@ Clone the repo, then:
 
 Run `npm dev` to watch for changes, or `npm run build` to build static assets to `/build` folder.
 
-If you use the same device for input and output (typical), then [local control](https://google.com?q=local+control) should be turned off.
+If you use the same device for input and output (typical), then [local control](https://google.com/search?q=midi+local+control) should be turned off.
