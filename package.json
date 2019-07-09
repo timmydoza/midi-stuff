@@ -11,7 +11,8 @@
     "server": "reload -b -d build",
     "build-css": "mkdir -p build/css && node-sass --output-style compressed scss/app.scss build/css/app.css",
     "copy": "mkdir -p build/js && cat node_modules/angular/angular.min.js js/*.js > build/js/app.js && cp index.html build",
-    "build": "npm run copy && npm run build-css"
+    "build": "npm run copy && npm run build-css",
+    "deploy": "npm run build && git subtree push --prefix build origin gh-pages"
   },
   "keywords": [],
   "author": "",
