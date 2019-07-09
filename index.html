@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/app.css" media="screen" charset="utf-8">
+    <title>Midi</title>
+  </head>
+  <body ng-app="midiApp" ng-controller="midiCtrl">
+    Inputs:
+    <select ng-model="inputSelect">
+      <option ng-repeat="input in inputs" value="{{$index}}">{{input[1].name}}</option>
+    </select>
+
+    <br>
+
+    Outputs:
+    <select ng-model="outputSelect">
+      <option ng-repeat="output in outputs" value="{{$index}}">{{output[1].name}}</option>
+    </select>
+
+    <br>
+
+    <button ng-click="init()">Go</button>
+    <button ng-click="play()">Play</button>
+
+    <div ng-repeat="(name, handler) in noteHandlers">
+      <input type="checkbox" ng-model="activeNoteHandlers[name]"> {{name}}
+    </div>
+
+    <div class="keyboard">
+      <div ng-repeat="key in keys"
+           id="key-{{key.key}}"
+           class="key-{{key.key}}
+                  note-{{key.note}}
+                  index-{{$index}}
+                  key
+                  key--{{key.color}}
+                  whiteindex-{{key.whiteIndex}}"
+           ng-class="{'key--active': activeNotes[key.key]}">
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
