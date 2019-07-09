@@ -10,4 +10,8 @@ Run `npm dev` to watch for changes, or `npm run build` to build static assets to
 
 If you use the same device for input and output (typical), then [local control](https://google.com/search?q=midi+local+control) should be turned off.
 
+[Try it live](https://timmydoza.github.io/midi-stuff/) (needs MII input/output)
+
+Vue version coming soon...
+
 ![screenshot](screenshot.png)
