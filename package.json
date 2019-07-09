@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "concurrently": "^3.4.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.9.0",
     "onchange": "^3.2.1",
-    "reload": "^1.1.5",
+    "reload": "^2.4.0",
     "uglify": "^0.1.5"
   }
 }
