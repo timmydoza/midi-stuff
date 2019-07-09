@@ -92,6 +92,9 @@ app.factory('handlers', function() {
     'Cycle': Cycler(),
     'Transpose': function(note) {
       return note + Math.floor(Date.now() / 1000 / 4) * 3 % 12;
+    },
+    'Whole Tone': function(note) {
+      return note * 2;
     }
 
   }
